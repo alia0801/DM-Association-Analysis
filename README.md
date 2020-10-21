@@ -57,7 +57,8 @@
 ## 執行時間比較
 
  - IBM data (./dataset/IBM-Quest-Data-Generator.exe/ttt.data.txt)
-  
+   - Basic data  
+   
     | Condition                                  |       |
     | ---                                        | :---: |
     | Number of items                            | 10877 |
@@ -66,88 +67,31 @@
 
 
  - Execution time
-  
-    - Minimum support: 4
 
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m  2.966 s |
-    |  Hash Tree  |  0 m 19.487 s |
-    |  FP-Growth  |  0 m  0.064 s |
+    | Min support |       4       |       5       |       6       |       7       |
+    | ---         | ---           | ---           | ---           | ---           |
+    |    暴力法   |  3:30:56.213  |  0:12:42.297  |  0:01:42.739  |  0:00:27.749  |
+    |  Hash Tree  |  0:15:31.734  |  0:00:17.721  |  0:00:13.553  |  0:00:10.750  |
+    |  FP-Growth  |  0:00:15.282  |  0:00:10.476  |  0:00:09.761  |  0:00:09.355  |
+
     
-    - Minimum support: 5
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force | 10 m 22.637 s |
-    |  Hash Tree  |  2 m 32.743 s |
-    |  FP-Growth  |  0 m 31.521 s |
-    
-    - Minimum support: 6
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m 47.572 s |
-    |  Hash Tree  |  0 m 41.402 s |
-    |  FP-Growth  |  0 m  0.450 s |
-    
-    - Minimum support: 7
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m 47.572 s |
-    |  Hash Tree  |  0 m 41.402 s |
-    |  FP-Growth  |  0 m  0.450 s |
   ---
  - Kaggle data (./dataset/BreadBasket_DMS.csv)
-  
+ 
+   - Basic data  
     | Condition                                  |       |
     | ---                                        | :---: |
     | Number of items                            | 21294 |
     | Number of transactions                     |  9531 |
     | Max number of item                         |   12  |
 
-
- - Execution time
-    - Minimum support: 100
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m 14.451 s |
-    |  Hash Tree  |  0 m  3.875 s |
-    |  FP-Growth  |  0 m  0.197 s |
+  - Execution time
   
-    - Minimum support: 200
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m  8.521 s |
-    |  Hash Tree  |  0 m  1.486 s |
-    |  FP-Growth  |  0 m  0.183 s |
-
-    - Minimum support: 300
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m  6.061 s |
-    |  Hash Tree  |  0 m  0.893 s |
-    |  FP-Growth  |  0 m  0.174 s |  
-    
-    - Minimum support: 400
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m  6.061 s |
-    |  Hash Tree  |  0 m  0.893 s |
-    |  FP-Growth  |  0 m  0.174 s |
-    
-    - Minimum support: 500
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m  6.061 s |
-    |  Hash Tree  |  0 m  0.893 s |
-    |  FP-Growth  |  0 m  0.174 s |
+    | Min support |      100      |      200      |      300      |      400      |      500      |
+    | ---         | ---           | ---           | ---           | ---           | ---           |
+    |    暴力法    |  0:58:09.205  |  0:23:10.025  |  0:20:02.641  |  0:05:59.406  |  0:05:58.123  |
+    |  Hash Tree  |  0:00:16.186  |  0:00:14.071  |  0:00:13.300  |  0:00:12.744  |  0:00:12.256  |
+    |  FP-Growth  |  0:00:09.957  |  0:00:09.153  |  0:00:08.382  |  0:00:08.135  |  0:00:07.797  |
 
 ## 結論
 - 本實驗是以IBM Quest Synthetic Data Generator所產生的資料及Kaggle上開放的dataset來作程式運行效能的評估。  
