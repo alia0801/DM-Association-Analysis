@@ -55,8 +55,8 @@
 
 
 ## 執行時間比較
-- Find frequent itemset
-  - IBM data (./dataset/IBM-Quest-Data-Generator.exe/ttt.data.txt)
+
+ - IBM data (./dataset/IBM-Quest-Data-Generator.exe/ttt.data.txt)
   
     | Condition                                  |       |
     | ---                                        | :---: |
@@ -65,7 +65,7 @@
     | Max number of item                         |   29  |
 
 
-  - Execution time
+ - Execution time
   
     - Minimum support: 4
 
@@ -99,7 +99,7 @@
     |  Hash Tree  |  0 m 41.402 s |
     |  FP-Growth  |  0 m  0.450 s |
   ---
-  - Kaggle data (./dataset/BreadBasket_DMS.csv)
+ - Kaggle data (./dataset/BreadBasket_DMS.csv)
   
     | Condition                                  |       |
     | ---                                        | :---: |
@@ -108,7 +108,7 @@
     | Max number of item                         |   12  |
 
 
-  - Execution time
+ - Execution time
     - Minimum support: 100
 
     |   Method    |      Time     |
