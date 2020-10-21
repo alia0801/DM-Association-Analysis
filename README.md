@@ -56,31 +56,17 @@
 
 ## 執行時間比較
 - Find frequent itemset
-  - IBM data (./data/IBM\_data.txt)
+  - IBM data (./dataset/IBM-Quest-Data-Generator.exe/ttt.data.txt)
   
     | Condition                                  |       |
     | ---                                        | :---: |
-    | Number of items                            |  9969 |
-    | Number of transactions                     |  984  |
+    | Number of items                            | 10877 |
+    | Number of transactions                     |  1069 |
+    | Max number of item                         |   29  |
 
 
   - Execution time
-    - Minimum support: 2
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force | 10 m 22.637 s |
-    |  Hash Tree  |  2 m 32.743 s |
-    |  FP-Growth  |  0 m 31.521 s |
   
-    - Minimum support: 3
-
-    |   Method    |      Time     |
-    | ---         | ---           |
-    | Brute Force |  0 m 47.572 s |
-    |  Hash Tree  |  0 m 41.402 s |
-    |  FP-Growth  |  0 m  0.450 s |
-
     - Minimum support: 4
 
     |   Method    |      Time     |
@@ -88,17 +74,42 @@
     | Brute Force |  0 m  2.966 s |
     |  Hash Tree  |  0 m 19.487 s |
     |  FP-Growth  |  0 m  0.064 s |
+    
+    - Minimum support: 5
+
+    |   Method    |      Time     |
+    | ---         | ---           |
+    | Brute Force | 10 m 22.637 s |
+    |  Hash Tree  |  2 m 32.743 s |
+    |  FP-Growth  |  0 m 31.521 s |
+    
+    - Minimum support: 6
+
+    |   Method    |      Time     |
+    | ---         | ---           |
+    | Brute Force |  0 m 47.572 s |
+    |  Hash Tree  |  0 m 41.402 s |
+    |  FP-Growth  |  0 m  0.450 s |
+    
+    - Minimum support: 7
+
+    |   Method    |      Time     |
+    | ---         | ---           |
+    | Brute Force |  0 m 47.572 s |
+    |  Hash Tree  |  0 m 41.402 s |
+    |  FP-Growth  |  0 m  0.450 s |
   ---
-  - Kaggle data (./data/BreadBasket\_DMS.csv)
+  - Kaggle data (./dataset/BreadBasket_DMS.csv)
   
     | Condition                                  |       |
     | ---                                        | :---: |
     | Number of items                            | 21294 |
-    | Number of transactions                     |  9684 |
+    | Number of transactions                     |  9531 |
+    | Max number of item                         |   12  |
 
 
   - Execution time
-    - Minimum support: 2
+    - Minimum support: 100
 
     |   Method    |      Time     |
     | ---         | ---           |
@@ -106,7 +117,7 @@
     |  Hash Tree  |  0 m  3.875 s |
     |  FP-Growth  |  0 m  0.197 s |
   
-    - Minimum support: 3
+    - Minimum support: 200
 
     |   Method    |      Time     |
     | ---         | ---           |
@@ -114,7 +125,23 @@
     |  Hash Tree  |  0 m  1.486 s |
     |  FP-Growth  |  0 m  0.183 s |
 
-    - Minimum support: 4
+    - Minimum support: 300
+
+    |   Method    |      Time     |
+    | ---         | ---           |
+    | Brute Force |  0 m  6.061 s |
+    |  Hash Tree  |  0 m  0.893 s |
+    |  FP-Growth  |  0 m  0.174 s |  
+    
+    - Minimum support: 400
+
+    |   Method    |      Time     |
+    | ---         | ---           |
+    | Brute Force |  0 m  6.061 s |
+    |  Hash Tree  |  0 m  0.893 s |
+    |  FP-Growth  |  0 m  0.174 s |
+    
+    - Minimum support: 500
 
     |   Method    |      Time     |
     | ---         | ---           |
@@ -123,9 +150,6 @@
     |  FP-Growth  |  0 m  0.174 s |
 
 ## 結論
-- 本實驗是以IBM Quest Synthetic Data Generator所產生的資料及Kaggle上開放的dataset來作程式運行效能的評估。
-- 由Coding的過程中，能感受到python與C\+\+程式的效率差異，尤其是在樹狀資料結構，C\+\+能夠更精準明確地使用指標來操作樹走訪，對於記憶體資源使用也比較能控制，因此實作出來的效率遠高於python的效率，經過實際比較，一樣是單純建構hash tree，python執行所需時間約為C\+\+之5倍，因此本程式在運算複雜的地方，都會改用C\+\+來實作，以達成最好的效果。
-
-
-- 隨著minimum support的下降，可以見到程式運行時間會越來越大幅度成長，尤其是brute force方法最為明顯，也因此brute force雖然coding想法容易，但只要資料量大或是minimum support低的狀況下，並不是一個好的做法。反觀FP-Growth，因為是使用全部的transaction來建構FP tree，因此對於低minimum support的環境下影響不大，比較下來也是這之中最好的做法。
+- 本實驗是以IBM Quest Synthetic Data Generator所產生的資料及Kaggle上開放的dataset來作程式運行效能的評估。  
+- 隨著minimum support的下降，可以見到程式運行時間會越來越大幅度成長，尤其是brute force方法最為明顯，也因此brute force雖然coding想法容易，但只要資料量大或是minimum support低的狀況下，並不是一個好的做法。反觀FP-Growth，因為是使用全部的transaction來建構FP tree，因此對於低minimum support的環境下影響不大，比較下來也是這之中最好的做法。  
 
