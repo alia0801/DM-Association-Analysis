@@ -18,9 +18,10 @@
 - `main.py`: 主程式，整合3種資料集*3種方法，共9種輸出結果
 
 ## 程式執行
-以kaggle資料集，使用hashtree實作apiori方法為例，並設定minimum support為 300 instance、minimum confidence為0.5
+以kaggle資料集，使用hashtree實作apiori方法為例，並設定minimum support為 300 instance、minimum confidence為0.5  
+- 輸入 : 選擇資料集與實作法所對應的函式，輸入參數minimum support與minimum confidence  
 ![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/run_input.jpg)  
-- 輸出 :  (包含frequent itemset , rules, 執行時間)
+- 輸出 :  (包含frequent itemset , rules, 執行時間)  
 ![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/run_output.jpg)  
 
 ## 驗證
