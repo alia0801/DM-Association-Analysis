@@ -1,5 +1,4 @@
-# 資料探勘
-## 關聯法則
+# 資料探勘-關聯法則
 
 ## 檔案架構
 ```
@@ -48,7 +47,7 @@
 - `DataReader.py`: 實作讀取輸入檔案介面
 - `main.py`: 主程式
 
-##程式執行
+## 程式執行
 - 以kaggle資料集，使用hashtree實作apiori方法為例，並設定minimum support為 300 instance、minimum confidence為0.5
 
 - 輸出 :  (包含frequent itemset , rules, 執行時間)
@@ -60,7 +59,7 @@
 - FP-Growth，為三種方法裡面最為迅速的方法，不論minimum support設定多低，都有不錯的表現，迅速地找出Frequent itemset。
 
 ## 驗證
-# 驗證輸出規則正確
+### 驗證輸出規則正確
 - 由於在大量數據的association rules並不會依照固定順序排列，再比對上有些難度，所以就採用上課投影片比較簡單的transaction，限制minimum support為0.4（2 instance）、minimum confidence為0.5，使用Weka產生association rules，再比對這次作業程式輸出的association rules，確認結果一致。
   |  TID  | Items |
   | :---: | :---: |
@@ -74,13 +73,13 @@
 
 - 本程式輸出結果
 
-# 驗證3種方法產出frequent itemset之結果相同
+### 驗證3種方法產出frequent itemset之結果相同
 - 由於從frequent itemset產出關連規則是使用相同函式(於驗證1已驗證過)，且規則數量較多在比對上有困難，因此只比對frequent itemset是否相同。  
 使用ibm資料集，限制minimum support的instance為5，確認3種方法所產出之frequent itemset相同。
 
 
 
-## Comparison
+## 執行時間比較
 - Find frequent itemset
   - IBM data (./data/IBM\_data.txt)
   
@@ -148,7 +147,7 @@
     |  Hash Tree  |  0 m  0.893 s |
     |  FP-Growth  |  0 m  0.174 s |
 
-## Conclusion
+## 結論
 - 本實驗是以IBM Quest Synthetic Data Generator所產生的資料及Kaggle上開放的dataset來作程式運行效能的評估。
 - 由Coding的過程中，能感受到python與C\+\+程式的效率差異，尤其是在樹狀資料結構，C\+\+能夠更精準明確地使用指標來操作樹走訪，對於記憶體資源使用也比較能控制，因此實作出來的效率遠高於python的效率，經過實際比較，一樣是單純建構hash tree，python執行所需時間約為C\+\+之5倍，因此本程式在運算複雜的地方，都會改用C\+\+來實作，以達成最好的效果。
 
@@ -160,5 +159,3 @@
 
 - 隨著minimum support的下降，可以見到程式運行時間會越來越大幅度成長，尤其是brute force方法最為明顯，也因此brute force雖然coding想法容易，但只要資料量大或是minimum support低的狀況下，並不是一個好的做法。反觀FP-Growth，因為是使用全部的transaction來建構FP tree，因此對於低minimum support的環境下影響不大，比較下來也是這之中最好的做法。
 
-## Authors
-[Yu-Tong Shen](https://github.com/yutongshen/)
