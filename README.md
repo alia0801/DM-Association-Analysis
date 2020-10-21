@@ -101,5 +101,5 @@
 
 ## 結論
 - 本實驗是以IBM Quest Synthetic Data Generator所產生的資料及Kaggle上開放的dataset來作程式運行效能的評估。  
-- 隨著minimum support的下降，可以見到程式運行時間會越來越大幅度成長，尤其是brute force方法最為明顯，也因此brute force雖然coding想法容易，但只要資料量大或是minimum support低的狀況下，並不是一個好的做法。反觀FP-Growth，因為是使用全部的transaction來建構FP tree，因此對於低minimum support的環境下影響不大，比較下來也是這之中最好的做法。  
+- 隨著minimum support的下降，可以見到程式運行時間會越來越大幅度成長，尤其是暴力法最為明顯，必須多次查看所有data，雖然coding想法容易，但只要資料量大或是minimum support低的狀況下，並不是一個好的做法。反觀FP-Growth，因為是使用全部的transaction來建構FP tree，只需掃過一次data，因此對於低minimum support的環境下影響不大，比較下來也是這之中最好的做法。  
 
