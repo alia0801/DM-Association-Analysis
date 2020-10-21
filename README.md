@@ -18,14 +18,14 @@
 - `main.py`: 主程式，整合3種資料集*3種方法，共9種輸出結果
 
 ## 程式執行
-- 以kaggle資料集，使用hashtree實作apiori方法為例，並設定minimum support為 300 instance、minimum confidence為0.5
-![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/run_input.jpg)
+以kaggle資料集，使用hashtree實作apiori方法為例，並設定minimum support為 300 instance、minimum confidence為0.5
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/run_input.jpg)  
 - 輸出 :  (包含frequent itemset , rules, 執行時間)
-![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/run_output.jpg)
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/run_output.jpg)  
 
 ## 驗證
-### 驗證輸出規則正確
-- 由於在大量數據的association rules並不會依照固定順序排列，再比對上有些難度，所以就採用上課投影片比較簡單的transaction，限制minimum support為0.4（2 instance）、minimum confidence為0.5，使用Weka產生association rules，再比對這次作業程式輸出的association rules，確認結果一致。
+### 驗證1. 輸出規則正確
+由於在大量數據的association rules並不會依照固定順序排列，再比對上有些難度，所以就採用上課投影片比較簡單的transaction，限制minimum support為0.4（2 instance）、minimum confidence為0.5，使用Weka產生association rules，再比對這次作業程式輸出的association rules，確認結果一致。
   |  TID  | Items |
   | :---: | :---: |
   |   1   |  ABC  |
@@ -34,18 +34,23 @@
   |   4   |  ACDE |
   |   5   |  DE   |
 
-- Weka輸出結果
-![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/weka.jpg)
+- Weka輸出結果  
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/weka.jpg)  
 
-- 本程式輸出結果
-![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/test_output1.jpg)
-![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/test_output2.jpg)
-![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/test_output3.jpg)
+- 本程式輸出結果  
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/test_output1.jpg)  
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/test_output2.jpg)  
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/test_output3.jpg)  
 
-### 驗證3種方法產出frequent itemset之結果相同
-- 由於從frequent itemset產出關連規則是使用相同函式(於驗證1已驗證過)，且規則數量較多在比對上有困難，因此只比對frequent itemset是否相同。  
+### 驗證2. 確認3種方法產出frequent itemset之結果相同
+由於從frequent itemset產出關連規則是使用相同函式(於驗證1已驗證過)，且規則數量較多在比對上有困難，因此只比對frequent itemset是否相同。  
 使用ibm資料集，限制minimum support的instance為5，確認3種方法所產出之frequent itemset相同。
-
+- Apiori暴力法  
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/ibm_freq_brute.jpg)  
+- Apiori使用hash tree  
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/ibm_freq_hash.jpg)  
+- FP-Growth  
+![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/ibm_freq_fp.jpg)  
 
 
 ## 執行時間比較
