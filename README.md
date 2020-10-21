@@ -74,6 +74,8 @@
     |  Hash Tree  |  0:15:31.734  |  0:00:17.721  |  0:00:13.553  |  0:00:10.750  |
     |  FP-Growth  |  0:00:15.282  |  0:00:10.476  |  0:00:09.761  |  0:00:09.355  |
 
+    ![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/ibm_compare1.jpg)
+    ![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/ibm_compare2.jpg)  
     
   ---
  - Kaggle data (./dataset/BreadBasket_DMS.csv)
@@ -93,6 +95,9 @@
     |    暴力法    |  0:58:09.205  |  0:23:10.025  |  0:20:02.641  |  0:05:59.406  |  0:05:58.123  |
     |  Hash Tree  |  0:00:16.186  |  0:00:14.071  |  0:00:13.300  |  0:00:12.744  |  0:00:12.256  |
     |  FP-Growth  |  0:00:09.957  |  0:00:09.153  |  0:00:08.382  |  0:00:08.135  |  0:00:07.797  |
+    
+    ![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/kaggle_compare1.jpg)
+    ![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/kaggle_compare2.jpg)  
 
 ## 結論
 - 本實驗是以IBM Quest Synthetic Data Generator所產生的資料及Kaggle上開放的dataset來作程式運行效能的評估。  
