@@ -66,7 +66,7 @@
     | Max number of item                         |   29  |
 
 
- - Execution time
+   - Execution time
 
     | Min support |       4       |       5       |       6       |       7       |
     | ---         | ---           | ---           | ---           | ---           |
@@ -79,13 +79,14 @@
  - Kaggle data (./dataset/BreadBasket_DMS.csv)
  
    - Basic data  
+   
     | Condition                                  |       |
     | ---                                        | :---: |
     | Number of items                            | 21294 |
     | Number of transactions                     |  9531 |
     | Max number of item                         |   12  |
 
-  - Execution time
+   - Execution time
   
     | Min support |      100      |      200      |      300      |      400      |      500      |
     | ---         | ---           | ---           | ---           | ---           | ---           |
