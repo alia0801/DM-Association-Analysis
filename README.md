@@ -2,9 +2,10 @@
 
 ## 簡要說明
 - 使用python實作Apiori暴力法、Apiori使用hash tree搜尋support值以及使用FP-Growth方法直接找出frequent itemset，並且由frequent itemset生成關聯規則。
+- 共實作於3種data，分別為上課投影片所舉例比較簡單的transaction、以IBM Quest Synthetic Data Generator產生之資料集以及Kaggle平台上公開提供之資料集。
 - 暴力法為逐筆transaction循序搜尋下去，如果比對candidate成功便會將其support值加一，這是裡面最緩慢的方法。
-- Hash tree，其實作的hash function為h(x) = x % 5，其中x為itemset當中所有數字相加，若item為英文字串，則將字串中所有字母轉為ascii代碼後加總。每個節點都可以有5棵子樹，因此搜尋candidate時便可以透過hash function的配對排除其他不必要的搜尋。
-- FP-Growth，為三種方法裡面最為迅速的方法，不論minimum support設定多低，都有不錯的表現，迅速地找出Frequent itemset。
+- Hash tree，其實作的hash function為h(x) = x % 5，其中x為itemset當中所有數字相加，若item為英文字串，則將字串中所有字母轉為ascii code後加總。每個節點都可以有5棵子樹，因此搜尋candidate時便可以透過hash function的配對排除其他不必要的搜尋。
+- FP-Growth為三種方法裡面最為迅速的方法，不論minimum support設定多低，都有不錯的表現，迅速地找出Frequent itemset。
 
 ## 檔案架構
 - `dataset/Test.csv`: 本次實驗輸入資料，為驗證本程式與Weka輸出結果一致之測試使用
@@ -18,7 +19,7 @@
 - `main.py`: 主程式，整合3種資料集*3種方法，共9種輸出結果
 
 ## 程式執行
-以kaggle資料集，使用hashtree實作apiori方法為例，並設定minimum support為 300 instance、minimum confidence為0.5  
+以kaggle資料集，使用hashtree實作apiori方法為例，並設定minimum support為 300 instance、minimum confidence為0.5。  
 - 輸入 : 選擇資料集與實作法所對應的函式，輸入參數minimum support與minimum confidence  
 ![image](https://github.com/alia0801/DM-Association-Analysis/blob/master/img/run_input.jpg)  
 - 輸出 :  (包含frequent itemset , rules, 執行時間)  
@@ -103,3 +104,5 @@
 - 本實驗是以IBM Quest Synthetic Data Generator所產生的資料及Kaggle上開放的dataset來作程式運行效能的評估。  
 - 隨著minimum support的下降，可以見到程式運行時間會越來越大幅度成長，尤其是暴力法最為明顯，必須多次查看所有data，雖然coding想法容易，但只要資料量大或是minimum support低的狀況下，並不是一個好的做法。反觀FP-Growth，因為是使用全部的transaction來建構FP tree，只需掃過一次data，因此對於低minimum support的環境下影響不大，比較下來也是這之中最好的做法。  
 
+## Author
+成大工科 大四 [李姵萱](https://github.com/alia0801)  
